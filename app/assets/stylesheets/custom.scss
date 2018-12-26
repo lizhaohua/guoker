@@ -39,11 +39,14 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
+  overflow-x: hidden;
   padding-top: 60px;
+
 }
 
 section {
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 textarea {
@@ -107,7 +110,8 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
+  color: white;
+  background-color: #555;
   a{
       color: $gray;
       &:hover {
@@ -203,7 +207,6 @@ input {
 
 #session_remember_me {
   width: auto;
-  margin-left: 0;
 }
 
 /* Users index */
@@ -216,7 +219,73 @@ input {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
-} 
+}
+
+// home background picture
+.body-background{ 
+  background-image: image-url('background.jpg');
+  background-color: #DADADA;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+body{
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.bg {
+  background-image: image-url('ucas.jpg');
+  background-color: #DADADA;
+  background-size: 100% 100%;
+  padding-top: 50px;
+  padding-bottom: 200px;
+}
+
+#side_credits_statistics {
+  height: 120px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 100;
+}
+
+.sideDiv_content {
+  box-shadow: 10px 0 10px 0 rgba(0, 0, 0, 0.1);
+  height: 100%;
+  left: 40px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding-left: 16px;
+}
+
+.side_credits_statistics_ctrlBlock {
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 26px;
+  z-index: 50;
+}
+
+.side_credits_statistics_ctrlBlock #credits_statistics_slide_in_button {
+  background: image_url("/images/side_course_table_button.png") repeat scroll left top rgba(0, 0, 0, 0);
+  height: 85px;
+  margin-top: 20px;
+  position: absolute;
+  left: 40px;
+  top: 0;
+  width: 16px;
+}
+
+.side_credits_statistics_ctrlBlock #credits_statistics_slide_in_button:hover {
+  background: image_url("/images/side_course_table_button_hover.png") repeat scroll left top rgba(0, 0, 0, 0);
+}
+
+
+
+
 
 
 // @import 'bootstrap-sprockets';
@@ -235,18 +304,6 @@ input {
 //   background-color: #555;
 //   color: white;
 //   padding: 10px;
-// }
-
-// .body-background{ 
-//   background-image: image-url('background.jpg');
-//   background-color: #DADADA;
-//   background-repeat: no-repeat;
-//   background-size: 100% 100%;
-// }
-
-// body{
-//   padding-top: 50px;
-//   padding-bottom: 100px;
 // }
 
 // html {

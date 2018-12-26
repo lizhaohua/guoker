@@ -1,4 +1,5 @@
 RailsAdmin.config do |config|
+  config.parent_controller = "::ApplicationController"
 
   # config.main_app_name = ["Cool app", "BackOffice"]
   # or something more dynamic
@@ -6,21 +7,11 @@ RailsAdmin.config do |config|
 
   # config.authorize_with :cancan, AdminAbility
 
-  config.included_models = ['User','Course','Grade']
-
-  # config.model ['Relationship'] do
-  #   navigation_label 'Association'
-  # end
-  # config.navigation_static_links = {
-  #     'Google' => 'http://www.google.com'
-  # }
-  # config.navigation_static_label = "My Links"
-
+  config.included_models = ['User','Course','Grade', 'Notice']
+  
   # == Authenticate ==
   config.authorize_with do
-    if !current_user.admin
-      redirect_to main_app.root_url, flash: {:danger => '请先以管理员身份登陆'}
-    end
+    redirect_to main_app.root_path, flash: {:danger => '请先以管理员身份登陆'} unless current_user.admin?
   end
 
   config.current_user_method(&:current_user)
